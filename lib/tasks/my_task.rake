@@ -29,7 +29,7 @@ end
 task :import_products => :environment do
   puts "Clearing products"
   Product.destroy_all
-  # Category.destroy_all
+  Category.destroy_all
   my_csv = CSV.open('products(3).csv')
   current_csv = my_csv.readlines
   counter = 1
@@ -54,24 +54,24 @@ task :import_products => :environment do
   puts "we are done. then you can try categories lol"
   puts "category time."
 
-  # my_csv = CSV.open('categories.csv')
-  # current_csv = my_csv.readlines
-  # counter = 1
-  # current_csv.each do |element|
-  #   if counter == 1
-  #     counter += 1
-  #   else
-  #     Category.create(
-  #       :category_key => element[1],
-  #       :name => element[2],
-  #       :description => element[10],
-  #       :priority => element[5],
-  #       :parent_key => element[3]
-  #       )
-  #     counter += 1
-  #     puts "Building Category number #{counter}, for #{element[2]}"
-  #   end
-  # end
+  my_csv = CSV.open('categories.csv')
+  current_csv = my_csv.readlines
+  counter = 1
+  current_csv.each do |element|
+    if counter == 1
+      counter += 1
+    else
+      Category.create(
+        :category_key => element[1],
+        :name => element[2],
+        :description => element[10],
+        :priority => element[5],
+        :parent_key => element[3]
+        )
+      counter += 1
+      puts "Building Category number #{counter}, for #{element[2]}"
+    end
+  end
 
 
 
