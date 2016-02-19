@@ -63,7 +63,7 @@ class ProductsController < ApplicationController
   end
 
   def other_index
-    unless current_user.email == "nicholas.schwaderer@gmail.com"
+    unless current_user.try(:email) == "nicholas.schwaderer@gmail.com"
       redirect_to new_user_session_path
     end
     @big_categories = Category::CATEGORIES
