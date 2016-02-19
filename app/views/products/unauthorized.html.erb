@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+   <style type="text/css" media="all">
+      td {
+        color: black;
+      }
+      span.biggish {
+        text-align: left;
+        font-size: 130%;
+        padding-bottom: -12px;
+      }
+      table {
+        width: 100%;
+      }
+      tr {
+        font-size: 70%;
+        height: 10px;
+      }
+      tr.odd {
+        background-color: #C0C0C0;
+      }
+      .page-break { display:block; clear:both; page-break-after:always; }
+      .cell-one {
+        /*width: 22%;*/
+        font-family: 'Arial';
+        font-size: 15px;
+      }
+      .cell-two {
+        /*width: 50%;*/
+        font-family: 'Arial';
+        font-size: 15px;
+      }
+      .cell-four {
+        /*width: 13%;*/
+        text-align: center;
+        font-family: 'Arial';
+        font-size: 15px;
+      }
+      .cell-five {
+        /*width: 13%;*/
+        text-align: center;
+        font-family: 'Arial';
+        font-size: 15px;
+      }
+      h3 {
+        margin-bottom: 2px;
+      }
+      th {
+        text-align: left;
+      }
+      .header#right {
+        margin-right: 0px;
+        display:block;
+      }
+      tr, td, th, tbody, thead, tfoot {
+        page-break-inside: avoid !important;
+      }
+      .button-small {
+        font-size: .8rem;
+        height: 2.8rem;
+        line-height: 2.8rem;
+        padding: 0 1.5rem;
+      }
+    </style>
+    <%= stylesheet_link_tag :products, "https://cdnjs.cloudflare.com/ajax/libs/milligram/1.1.0/milligram.css" %>
+    <%= stylesheet_link_tag :products, "https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" %>
+
+
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header onload='number_pages'>
+    </header>
+    <main role="main">
+      <div class="container" style="margin-top:20px;">
+        <div class="row">
+          <div class="column">
+            <h2>You are not authorized to access this web page.</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
