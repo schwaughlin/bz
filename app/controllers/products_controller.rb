@@ -64,7 +64,7 @@ class ProductsController < ApplicationController
 
   def other_index
     unless current_user.try(:email) == "nicholas.schwaderer@gmail.com" || current_user.try(:email) == "elkhunter1964@gmail.com" || current_user.try(:email) == "daniel.zolnikov@gmail.com" || current_user.try(:email) == "lazyt4jewels@gmail.com"
-      redirect_to unauthorized_products_path
+      redirect_to unauthorized_path
     end
     @big_categories = Category::CATEGORIES
     @categories = Category.all
