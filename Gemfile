@@ -9,7 +9,6 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
 gem 'administrate'
-gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
 gem 'high_voltage'
@@ -21,6 +20,9 @@ gem 'unicorn'
 gem 'unicorn-rails'
 gem 'mechanize'
 gem 'httparty'
+gem 'font-awesome-sass', '~> 4.5.0'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'byebug'
@@ -34,7 +36,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'
@@ -44,7 +45,6 @@ group :development do
   gem 'rb-fchange', :require=>false
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
-  gem 'spring-commands-rspec'
 end
 
 group :production do

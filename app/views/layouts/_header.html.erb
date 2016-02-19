@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script>
+      function subst() {
+        var vars={};
+        var d=document.location.search.substring(1).split('&');
+        for(var i in d) {var z=d[i].split('=',2);vars[z[0]] = unescape(z[1]);}
+        if (vars['section'] == 'Product Index by Category'){
+          document.getElementById('dynamic-header').innerHTML = "www.robertcgrayco.com";
+          document.getElementById('website-bit').innerHTML = ".";
+          var m = document.getElementById('website-bit');
+          m.color = "#FFFFFF";
+        } else {
+          document.getElementById('dynamic-header').innerHTML = vars['section'];
+        }
+      }
+    </script>
+  </head>
+  <body onload="subst()">
+    <div class="on-the-top" style="border-bottom:2px solid black; margin-bottom:-400px;">
+
+      <div align="right" style="margin-top: -10px">
+        <h4 id="dynamic-header"></h4>
+      </div>
+      <div align="center" style="margin-top:-40px;" >
+        <span id="website-bit">www.robertcgrayco.com</span>
+      </div>
+      <div align="left" style="margin-top:-18px;">
+        <span id="initial-bit">Robert C Gray Company</span>
+      </div>
+    </div>
+  </body>
+</html>

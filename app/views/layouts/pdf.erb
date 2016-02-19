@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Basicframework" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Basicframework" %>">
+    <%= wicked_pdf_stylesheet_link_tag "pdf" %>
+    <%= wicked_pdf_javascript_include_tag "number_pages" %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <style type="text/css" media="all">
+      /* clear */
+      /* clear */
+      body {
+        font-family: "Arial";
+      }
+      td {
+        color: black;
+      }
+      span.biggish {
+        text-align: left;
+        font-size: 130%;
+        padding-bottom: -12px;
+      }
+      table {
+        width: 100%;
+      }
+      tr {
+        font-size: 70%;
+        height: 10px;
+      }
+      tr.odd {
+        background-color: #C0C0C0;
+      }
+      .page-break { display:block; clear:both; page-break-after:always; }
+      .cell-one {
+        width: 22%;
+      }
+      .cell-two {
+        width: 50%;
+      }
+      .cell-four {
+        width: 13%;
+        text-align: center;
+      }
+      .cell-five {
+        width: 13%;
+        text-align: center;
+      }
+      h3 {
+        margin-bottom: 2px;
+      }
+      th {
+        text-align: left;
+      }
+      .header#right {
+        margin-right: 0px;
+        display:block;
+      }
+      tr, td, th, tbody, thead, tfoot {
+        page-break-inside: avoid !important;
+      }
+    </style>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+
+</html>

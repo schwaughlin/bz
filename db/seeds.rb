@@ -5,7 +5,19 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-user = CreateAdminService.new.call
-puts 'CREATED ADMIN USER: ' << user.email
+# user = CreateAdminService.new.call
+# puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
+counter = 1
+110.times do
+  puts "Building product number #{counter}"
+    Product.create(
+      :name => Faker::Commerce.product_name,
+      :price => Faker::Commerce.price,
+      :description => Faker::Lorem.sentence
+      )
+    counter += 1
+end
+
+Product.destroy_all

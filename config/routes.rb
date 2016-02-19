@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
-  root to: 'visitors#index'
+  root to: 'products#other_index'
   devise_for :users
+  resources :products
+  resources :categories
 end
