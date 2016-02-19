@@ -23,6 +23,7 @@ gem 'httparty'
 gem 'font-awesome-sass', '~> 4.5.0'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-heroku'
 
 group :development, :test do
   gem 'byebug'
