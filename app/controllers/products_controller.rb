@@ -63,7 +63,7 @@ class ProductsController < ApplicationController
   end
 
   def other_index
-    unless current_user.try(:email) == "nicholas.schwaderer@gmail.com" || current_user.try(:email) == "elkhunter1964@gmail.com" || current_user.try(:email) == "daniel.zolnikov@gmail.com" || current_user.try(:email) == "lazyt4jewels@gmail.com"
+    unless current_user.try(:email) == "nicholas.schwaderer@gmail.com" || current_user.try(:email) == "elkhunter1964@gmail.com" || current_user.try(:email) == "daniel.zolnikov@gmail.com" || current_user.try(:email) == "lazyt4jewels@gmail.com" || current_user.try(:email) == "sales@robertcgrayco.com"
       if current_user
         redirect_to unauthorized_path
       else
