@@ -12,6 +12,23 @@
         font-size: 130%;
         padding-bottom: -12px;
       }
+
+      h1 {
+        margin-left: -50px;
+      }
+      h2, h3, h4, .collapse-all{
+        cursor: pointer;
+      }
+      h2:hover, h3:hover, h4:hover, .collapse-all:hover {
+        background-color: yellow;
+      }
+      h2 {
+        margin-left: -50px;
+        text-decoration: underline;
+      }
+      h3 {
+        margin-left: -25px;
+      }
       table {
         width: 100%;
       }
@@ -85,12 +102,12 @@
         </div>
         <div class="row">
           <div class="column">
-            <h2 class="my-generated">
+            <h1 class="my-generated">
               <%= link_to raw("
                 <i class=\"fa fa-plus-square-o\"></i> New Product"), new_product_path(Product.new), :class => "pull-left" %>
 
               <%= link_to raw("
-    <i class=\"fa fa-cloud-download\"></i> Generate PDF Catalog"), products_path(:format => :pdf), :class => "pull-right to-generate-this" %></h2>
+    <i class=\"fa fa-cloud-download\"></i> Generate PDF Catalog"), products_path(:format => :pdf), :class => "pull-right to-generate-this" %></h1>
             </div>
         </div>
         <div class="row">
