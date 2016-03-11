@@ -10102,3 +10102,35 @@ NoMethodError - undefined method `h2link_to' for #<#<Class:0x007ff22a714340>:0x0
 
 
 Started POST "/__better_errors/6b8047de2f224449/variables" for ::1 at 2016-03-11 16:23:05 -0700
+
+
+Started GET "/products/240" for ::1 at 2016-03-11 16:23:46 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"240"}
+  [1m[36mProduct Load (0.4ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 240]]
+  Rendered products/show.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/products/240" for ::1 at 2016-03-11 16:24:24 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"240"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 240]]
+  Rendered products/show.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 38ms (Views: 36.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/240" for ::1 at 2016-03-11 16:24:56 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"240"}
+  [1m[36mProduct Load (0.3ms)[0m  [1mSELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1[0m  [["id", 240]]
+  Rendered products/show.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 41ms (Views: 39.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/products/240" for ::1 at 2016-03-11 16:25:05 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"240"}
+  [1m[35mProduct Load (0.3ms)[0m  SELECT  "products".* FROM "products" WHERE "products"."id" = $1 LIMIT 1  [["id", 240]]
+  Rendered products/show.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.3ms)

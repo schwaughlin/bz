@@ -89,7 +89,7 @@
         </div>
         <div class="row">
           <div class="column">
-            <h2><%= @product.name %></h2>
+            <h5><%= @product.name %></h5>
           </div>
         </div>
         <div class="row">
@@ -122,7 +122,7 @@
             <p><strong>Manufacturer:</strong> <%= @product.manufacturer %></p>
           </div>
         </div>
-        <h2><div><%= link_to raw("<i class=\"fa fa-cog\"></i> Edit"), edit_product_path(@product.id), :class => "button my-edit button-outline pull-left" %></div>
+        <h5><div><%= link_to raw("<i class=\"fa fa-cog\"></i> Edit"), edit_product_path(@product.id), :class => "button my-edit button-outline pull-left" %></div>
                                 <div><%= link_to raw("
       <i class=\"fa fa-trash-o fa-lg\"></i> Delete"), @product, :class => "button my-delete pull-left",  method: :delete, data: { confirm: 'Are you sure?' } %></div>
       </div>
