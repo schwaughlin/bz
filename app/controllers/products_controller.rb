@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
     respond_to do |format|
 
       format.html do
-
       end
 
       format.pdf do
@@ -45,13 +44,23 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @categories = Category.all
+    @my_hash = Hash.new
+    @categories.each do |category|
+      @my_hash[category.name] = category.id
+    end
+    @current_category = @product.category
 
   end
 
   def update
     @product = Product.find(params[:id])
 
+
     @product.update(product_params)
+    @product.category_id = params[:product][:category]
+    @product.category_name = Category.find(params[:product][:category]).name
+    @product.save
     redirect_to @product
 
   end
@@ -63,6 +72,9 @@ class ProductsController < ApplicationController
   end
 
   def other_index
+    @big_categories = Category::CATEGORIES
+    @categories = Category.all
+    @products = Product.all
     unless current_user.try(:email) == "nicholas.schwaderer@gmail.com" || current_user.try(:email) == "elkhunter1964@gmail.com" || current_user.try(:email) == "daniel.zolnikov@gmail.com" || current_user.try(:email) == "lazyt4jewels@gmail.com" || current_user.try(:email) == "sales@robertcgrayco.com"
       if current_user
         redirect_to unauthorized_path
@@ -70,9 +82,7 @@ class ProductsController < ApplicationController
         redirect_to new_user_session_path
       end
     end
-    @big_categories = Category::CATEGORIES
-    @categories = Category.all
-    @products = Product.all
+
 
   end
 

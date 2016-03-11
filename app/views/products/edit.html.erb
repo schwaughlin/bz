@@ -79,9 +79,9 @@
       <div class="container" style="margin-top:20px;">
         <div class="row">
           <div class="column">
-            <h2><%= link_to raw("
+            <h5><strong><%= link_to raw("
                 <i class=\"fa fa-caret-square-o-left\"></i> Back"), root_path, :class => "pull-left" %>
-</h2>
+</h5></strong>
           </div>
         </div>
         <br><br>
@@ -91,7 +91,7 @@
             <%= f.input :description %><br>
             <%= f.input :price, placeholder: 'Decimal only. e.g. \'10.40\'.' %><br>
             <%= f.input :wholesale_price, placeholder: 'Decimal only. e.g. \'10.40\'.' %><br>
-            <strong>Category:</strong> <%= @product.category_name %><br><br>
+             <%= f.input :category,:collection => Category.all,:label_method => :name, :value_method => :id,:label => "Category", :selected => @product.category_id, :include_blank => false %><br>
 
             <%= f.input :manufacturer %><br>
             <%= f.button :submit %>
