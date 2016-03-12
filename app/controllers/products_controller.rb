@@ -55,8 +55,6 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-
-
     @product.update(product_params)
     @product.category_id = params[:product][:category]
     @product.category_name = Category.find(params[:product][:category]).name
@@ -67,7 +65,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all
+    @categories = Category.all.samplecategories_with_products
 
   end
 

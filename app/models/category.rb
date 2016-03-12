@@ -31,6 +31,16 @@ class Category < ActiveRecord::Base
     end
   end
 
+  def categories_with_products
+    @appropro_categories = []
+    Category.all.each do |category|
+      if category.just_straight_up_products
+        @appropro_categories << category
+      end
+    end
+    return @appropro_categories
+  end
+
   def children_categories
     categories = Category.where("parent_key = ?", self.category_key)
     return categories
