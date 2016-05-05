@@ -65,7 +65,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all.categories_with_products
+    @categories = Category.all.sample.categories_with_products
   end
 
   def other_index

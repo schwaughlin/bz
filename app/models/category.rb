@@ -22,7 +22,6 @@ class Category < ActiveRecord::Base
 
   end
 
-
   def has_children?
     if self.children_categories.length > 0
       return true
