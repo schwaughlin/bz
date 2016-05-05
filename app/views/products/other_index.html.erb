@@ -225,10 +225,16 @@
             <h1 class="my-generated">
               <%= link_to raw("
                 <i class=\"fa fa-plus-square-o\"></i> New Product"), new_product_path(Product.new), :class => "pull-left" %>
-
               <%= link_to raw("
     <i class=\"fa fa-cloud-download\"></i> Generate PDF Catalog"), products_path(:format => :pdf), :class => "pull-right to-generate-this" %></h1>
             </div>
+        </div>
+        <div class="row">
+          <div class="column">
+            <br>
+              <%= link_to raw("
+                <i class=\"fa fa-pencil-square\"></i> Edit Category Names"), categories_path, :style => "font-size: 270%; margin-left: -50px;", :class => "pull-left" %>
+          </div>
         </div>
         <div class="row">
           <div class="column">
