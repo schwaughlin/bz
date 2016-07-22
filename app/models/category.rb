@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  has_many :products
+  has_many :products, -> { order(position: :asc) }
   CATEGORIES = ["Folders", "Holders&Displays", "Storage", "MoreSupplies", "Albums", "Tubes"]
 
   def has_products?

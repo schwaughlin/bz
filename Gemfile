@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 
+gem 'acts_as_list'
 gem 'administrate'
 gem 'devise'
 gem 'figaro'
